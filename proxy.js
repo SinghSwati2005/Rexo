@@ -1,14 +1,10 @@
-import { authMiddleware } from "@clerk/nextjs";
+import { authMiddleware } from "@clerk/nextjs/server";
 
 export default authMiddleware({
-  // Define which routes are public
   publicRoutes: ["/", "/sign-in", "/sign-up"],
 });
 
-// Force Node.js runtime (not Edge)
-export const runtime = "nodejs";
-
-// Matcher config for Next.js App Router
+export const runtime = "nodejs"; // force Node runtime, not Edge
 export const config = {
   matcher: ["/((?!.*\\..*|_next).*)", "/", "/(api|trpc)(.*)"],
 };
