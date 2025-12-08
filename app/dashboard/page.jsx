@@ -1,9 +1,11 @@
-import { auth, UserButton } from "@clerk/nextjs";
+import { auth } from "@clerk/nextjs/server";
 
-export default function Dashboard() {
+export default async function Dashboard() {
   const { userId } = auth();
 
-  if (!userId) return <p>You must be logged in to view this.</p>;
-<UserButton/>
-  return <h1>Welcome to your dashboard</h1>;
+  if (!userId) {
+    return <div>Please sign in</div>;
+  }
+
+  return <div>Welcome, user {userId}</div>;
 }
