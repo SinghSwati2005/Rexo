@@ -1,10 +1,10 @@
-import { authMiddleware } from "@clerk/nextjs/server";
+import { clerkMiddleware } from "@clerk/nextjs/server";
 
-export default authMiddleware({
+export default clerkMiddleware({
   publicRoutes: ["/", "/sign-in", "/sign-up"],
 });
 
-export const runtime = "nodejs"; // force Node runtime, not Edge
+export const runtime = "nodejs"; // force Node runtime
 export const config = {
   matcher: ["/((?!.*\\..*|_next).*)", "/", "/(api|trpc)(.*)"],
 };
