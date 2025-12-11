@@ -1,30 +1,23 @@
+"use client";
+
 import {
   UserButton,
   SignedOut,
   SignedIn,
   SignInButton,
   SignUpButton,
+  useUser,
 } from "@clerk/nextjs";
 import Link from "next/link";
 
 export default function Navbar() {
+  const { user } = useUser();
+  const userName = user?.firstName || user?.fullName || "User";
   return (
     <nav className="flex items-center justify-between px-8 py-4 shadow bg-white/90 backdrop-blur">
       <h2 className="text-3xl font-extrabold text-[#d6601a] tracking-wider">
         REXO AI
       </h2>
-
-      <div className="flex items-center gap-6 text-base font-semibold">
-        <Link
-          href="#features"
-          className="hover:text-[#b44f15] transition-colors"
-        >
-          Key Features
-        </Link>
-        <Link href="#demo" className="hover:text-[#b44f15] transition-colors">
-          Demo
-        </Link>
-      </div>
 
       <div className="flex items-center gap-3">
         <SignedOut>
@@ -41,7 +34,10 @@ export default function Navbar() {
         </SignedOut>
 
         <SignedIn>
-          <UserButton afterSignOutUrl="/" />
+          <div className="flex items-center gap-3">
+            <UserButton afterSignOutUrl="/" />
+            <span className="text-gray-800 font-semibold">{userName}</span>
+          </div>
         </SignedIn>
       </div>
     </nav>
