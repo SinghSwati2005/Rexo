@@ -25,19 +25,41 @@ export default function WelcomePage() {
           <h1 className="text-5xl font-bold text-[#d6601a]">
             Hi {name}, Welcome!
           </h1>
-          <p className="text-lg text-gray-700 max-w-2xl">
+          <p className="text-lg text-gray-700 max-w-2xl mx-auto">
             Tell us what festival or occasion you are shopping for, and choose
             how you want to explore.
           </p>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-4 text-left">
           <label className="block text-sm font-semibold text-gray-800">
             What festival or occasion are you shopping for?
           </label>
           <input
             type="text"
-            placeholder="e.g., Diwali, Wedding, Graduation..."
+            placeholder="Diwali, Wedding, Graduation..."
+            className="w-full rounded-xl border border-[#f3e8d7] bg-white px-4 py-3 text-base shadow-sm focus:border-[#d6601a] focus:ring-2 focus:ring-[#d6601a]/20 outline-none"
+          />
+        </div>
+
+        <div className="space-y-4 text-left">
+          <label className="block text-sm font-semibold text-gray-800">
+            What is your preferred color?
+          </label>
+          <input
+            type="text"
+            placeholder="Red, Blue, Gold, Multi-color..."
+            className="w-full rounded-xl border border-[#f3e8d7] bg-white px-4 py-3 text-base shadow-sm focus:border-[#d6601a] focus:ring-2 focus:ring-[#d6601a]/20 outline-none"
+          />
+        </div>
+
+        <div className="space-y-4 text-left">
+          <label className="block text-sm font-semibold text-gray-800">
+            What is your budget range?
+          </label>
+          <input
+            type="text"
+            placeholder="500-1000, 200-5000..."
             className="w-full rounded-xl border border-[#f3e8d7] bg-white px-4 py-3 text-base shadow-sm focus:border-[#d6601a] focus:ring-2 focus:ring-[#d6601a]/20 outline-none"
           />
         </div>
