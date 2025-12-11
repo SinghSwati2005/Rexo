@@ -49,9 +49,6 @@ export default function LandingPage() {
             fashion brain.
           </p>
           <div className="flex gap-4 mt-4">
-            <Button className="bg-[#d6601a] px-6 py-3 rounded-xl text-lg font-semibold hover:bg-[#c25315]">
-              Launch Agent
-            </Button>
             <Button
               asChild
               variant="outline"
@@ -59,8 +56,11 @@ export default function LandingPage() {
             >
               <a href="#features">Learn More</a>
             </Button>
-            <Button className="bg-[#f08a1f] px-6 py-3 rounded-xl text-lg font-semibold text-white hover:bg-[#e07e17]">
-              Try Now!
+            <Button
+              asChild
+              className="bg-[#f08a1f] px-6 py-3 rounded-xl text-lg font-semibold text-white hover:bg-[#e07e17]"
+            >
+              <Link href="/demo">Try Now!</Link>
             </Button>
           </div>
         </div>
@@ -126,8 +126,6 @@ export default function LandingPage() {
           alt="Traditional fashion ensemble curated by AI"
         />
       </section>
-
-      
     </div>
   );
 }
