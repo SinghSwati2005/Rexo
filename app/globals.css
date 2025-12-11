@@ -119,4 +119,24 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  /* Hide Clerk dev helper window and default Next.js watermark if present */
+  [data-clerk-dev-browser],
+  #__next-build-watcher,
+  #__next-prerender-indicator {
+    display: none !important;
+  }
+
+  .animate-features-marquee {
+    animation: features-marquee 16s linear infinite;
+  }
+
+  @keyframes features-marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
 }
